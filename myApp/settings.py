@@ -68,7 +68,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "myApp", "static"),  # Ensure this points to the correct directory
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
